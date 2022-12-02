@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public sealed class Board : MonoBehaviour
 {
@@ -22,7 +23,14 @@ public sealed class Board : MonoBehaviour
         {
             for (var x = 0; x < Width; x++)
             {
-                Tiles[x, y] = rows[y].tiles[x];
+                var tile = rows[y].tiles[x];
+
+                tile.x = x;
+                tile.y = y;
+                
+                Tiles[x, y] = tile;
+
+                tile.Item = ItemDB.Items[Random.Range(0, ItemDB.Items.Length)];
             }
         }
         
