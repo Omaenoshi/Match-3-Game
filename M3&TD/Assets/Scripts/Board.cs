@@ -44,6 +44,16 @@ public sealed class Board : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (!Input.GetKeyDown(KeyCode.A)) return;
+
+        foreach (var connectedTile in Tiles[0, 0].GetConnectedTiles())
+        {
+            connectedTile.icon.transform.DOScale(1.25f, TweenDuration).Play();
+        }
+    }
+
     public async void Select(Tile tile)
     {
         if(!_selection.Contains(tile)) _selection.Add(tile); 
@@ -72,12 +82,23 @@ public sealed class Board : MonoBehaviour
 
         await sequence.Play().AsyncWaitForCompletion();
 
-        Sprite sp1 = tile1.GetComponent<Image>().sprite;
-        Sprite sp2 = tile2.GetComponent<Image>().sprite;
+        icon1Transform.SetParent(tile2.transform);
+        icon2Transform.SetParent(tile1.transform);
 
-        tile1.GetComponent<Image>().sprite = sp2;
-        tile2.GetComponent<Image>().sprite = sp1;
+        tile1.icon = icon2;
+        tile2.icon = icon1;
 
         (tile1.Item, tile2.Item) = (tile2.Item, tile1.Item);
     }
+
+    private bool CanPop()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void Pop()
+    {
+        
+    }
+
 }
