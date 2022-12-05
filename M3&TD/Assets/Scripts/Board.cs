@@ -19,7 +19,7 @@ public sealed class Board : MonoBehaviour
     public int Width => Tiles.GetLength(0);
     public int Height => Tiles.GetLength(1);
 
-    private readonly List<Tile> _selection = new List<Tile>();
+    private readonly List<Tile> _selection = new List<Tile>(2);
 
     private const float TweenDuration = 0.25f;
     private void Awake() => Instance = this;
@@ -57,28 +57,27 @@ public sealed class Board : MonoBehaviour
         _selection.Clear();
     }
 
-    private async Task Swap(Tile tileFrom, Tile tileTo)
+    public async Task Swap(Tile tile1, Tile tile2)
     {
-        var iconFrom = tileFrom.icon;
-        var iconTo = tileTo.icon;
+        var icon1 = tile1.icon;
+        var icon2 = tile2.icon;
 
-        var iconFromTransform = iconFrom.transform;
-        var iconToTransform = iconTo.transform;
+        var icon1Transform = icon1.transform;
+        var icon2Transform = icon2.transform;
 
         var sequence = DOTween.Sequence();
 
-        sequence.Join(iconFromTransform.DOMove(iconToTransform.position, TweenDuration))
-            .Join(iconToTransform.DOMove(iconFromTransform.position, TweenDuration));
+        sequence.Join(icon1Transform.DOMove(icon2Transform.position, TweenDuration))
+            .Join(icon2Transform.DOMove(icon1Transform.position, TweenDuration));
 
-        await sequence.Play()
-            .AsyncWaitForCompletion();
+        await sequence.Play().AsyncWaitForCompletion();
 
-        Sprite sp1 = tileFrom.GetComponent<Image>().sprite;
-        Sprite sp2 = tileTo.GetComponent<Image>().sprite;
+        Sprite sp1 = tile1.GetComponent<Image>().sprite;
+        Sprite sp2 = tile2.GetComponent<Image>().sprite;
 
-        tileFrom.GetComponent<Image>().sprite = sp2;
-        tileTo.GetComponent<Image>().sprite = sp1;
+        tile1.GetComponent<Image>().sprite = sp2;
+        tile2.GetComponent<Image>().sprite = sp1;
 
-        (tileFrom.Item, tileTo.Item) = (tileTo.Item, tileFrom.Item);
+        (tile1.Item, tile2.Item) = (tile2.Item, tile1.Item);
     }
 }
