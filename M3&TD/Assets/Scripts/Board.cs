@@ -48,7 +48,17 @@ public sealed class Board : MonoBehaviour
 
     public async void Select(Tile tile)
     {
-        if(!_selection.Contains(tile)) _selection.Add(tile); 
+        if (_selection.Count == 0)
+        {
+            _selection.Add(tile);
+        } else if (!_selection.Contains(tile) && _selection[0].Neighbours.Contains(tile))
+        {
+            _selection.Add(tile);
+        }
+        else
+        {
+            _selection.Clear();
+        }
         
         if (_selection.Count < 2) return;
 
@@ -60,7 +70,7 @@ public sealed class Board : MonoBehaviour
         if (CanPop(_selection[1]))
         {
             Pop();
-            if (CheckPop()) Pop();
+            if(CheckPop()) Pop();
         }
         else
         {
