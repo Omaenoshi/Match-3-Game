@@ -38,19 +38,11 @@ public sealed class Board : MonoBehaviour
                 tile.y = y;
                 
                 Tiles[x, y] = tile;
-
-                tile.Item = ItemDB.Items[Random.Range(0, ItemDB.Items.Length)];
+                do
+                {
+                    tile.Item = ItemDB.Items[Random.Range(0, ItemDB.Items.Length)];
+                } while (tile.GetConnectedTiles().Count > 2);
             }
-        }
-    }
-
-    public void Update()
-    {
-        if (!Input.GetKeyDown(KeyCode.A)) return;
-
-        foreach (var connectedTile in Tiles[0, 0].GetConnectedTiles())
-        {
-            connectedTile.icon.transform.DOScale(1.25f, TweenDuration).Play();
         }
     }
 
@@ -64,10 +56,21 @@ public sealed class Board : MonoBehaviour
 
         await Swap(_selection[0], _selection[1]);
         
+
+        if (CanPop(_selection[1]))
+        {
+            Pop();
+            if (CheckPop()) Pop();
+        }
+        else
+        {
+            await Swap(_selection[0], _selection[1]);
+        }
+        
         _selection.Clear();
     }
 
-    public async Task Swap(Tile tile1, Tile tile2)
+    private async Task Swap(Tile tile1, Tile tile2)
     {
         var icon1 = tile1.icon;
         var icon2 = tile2.icon;
@@ -91,14 +94,59 @@ public sealed class Board : MonoBehaviour
         (tile1.Item, tile2.Item) = (tile2.Item, tile1.Item);
     }
 
-    private bool CanPop()
+    private bool CanPop(Tile tile)
     {
-        throw new NotImplementedException();
+        return tile.GetConnectedTiles(new List<Tile> { tile }).Skip(1).Count() >= 2;
     }
 
-    private void Pop()
+    private bool CheckPop()
     {
-        
+        for (var y = 0; y < Height; y++)
+        {
+            for (var x = 0; x < Width; x++)
+            {
+                if (Tiles[x, y].GetConnectedTiles().Skip(1).Count() >= 2)
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    private async void Pop()
+    {
+        for (var y = 0; y < Height; y++)
+        {
+            for (var x = 0; x < Width; x++)
+            {
+                var tile = Tiles[x, y];
+
+                var connectedTiles = tile.GetConnectedTiles();
+                
+                if (connectedTiles.Count < 3) continue;
+
+                var deflateSequence = DOTween.Sequence();
+
+                foreach (var connectedTile in connectedTiles)
+                {
+                    deflateSequence.Join(connectedTile.icon.transform.DOScale(Vector3.zero, TweenDuration));
+                    
+                }
+
+                await deflateSequence.Play().AsyncWaitForCompletion();
+
+                var inflateSequence = DOTween.Sequence();
+
+                foreach (var connectedTile in connectedTiles)
+                {
+                    connectedTile.Item = ItemDB.Items[Random.Range(0, ItemDB.Items.Length)];
+
+                    inflateSequence.Join(connectedTile.icon.transform.DOScale(1.3f, TweenDuration));
+                }
+
+                await inflateSequence.Play().AsyncWaitForCompletion();
+            }
+        }
     }
 
 }
