@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca21dc0bc4a4e2a448ebcb7933e2ac76, type: 3}
   m_Name: Pink
   m_EditorClassIdentifier: 
-  value: 7
+  value: 0
   sprite: {fileID: 1159668624, guid: b18c88b8540227743a3d960cf5145bfb, type: 3}

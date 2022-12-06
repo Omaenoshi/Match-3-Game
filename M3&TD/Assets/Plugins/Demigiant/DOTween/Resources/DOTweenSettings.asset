@@ -24,11 +24,11 @@ MonoBehaviour:
   showUnityEditorReport: 0
   logBehaviour: 0
   drawGizmos: 1
-  defaultRecyclable: 0
-  defaultAutoPlay: 3
+  defaultRecyclable: 1
+  defaultAutoPlay: 0
   defaultUpdateType: 0
   defaultTimeScaleIndependent: 0
-  defaultEaseType: 6
+  defaultEaseType: 4
   defaultEaseOvershootOrAmplitude: 1.70158
   defaultEasePeriod: 0
   defaultAutoKill: 1
@@ -36,12 +36,12 @@ MonoBehaviour:
   debugMode: 0
   debugStoreTargetId: 1
   showPreviewPanel: 1
-  storeSettingsLocation: 0
+  storeSettingsLocation: 1
   modules:
     showPanel: 0
-    audioEnabled: 1
-    physicsEnabled: 1
-    physics2DEnabled: 1
+    audioEnabled: 0
+    physicsEnabled: 0
+    physics2DEnabled: 0
     spriteEnabled: 1
     uiEnabled: 1
     textMeshProEnabled: 0
