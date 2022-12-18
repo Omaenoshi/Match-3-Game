@@ -1,36 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movment : MonoBehaviour
 {
-    [SerializeField]
-    public Transform targetDestination;
+    public GameObject targetDestination;
 
     GameObject targetGameObject;
-    [SerializeField]
     private float speed;
 
-    Rigidbody2D rgbd2d;
-    private void Awake()
+    private void Update()
     {
-        rgbd2d = GetComponent<Rigidbody2D>();
-        targetGameObject = targetDestination.gameObject;
-    }
-    void Start()
-    {
-
+        Move();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Move()
     {
-
-    }
-
-    private void FixedUpdate()
-    {
-        Vector3 direction = (targetDestination.position - transform.position).normalized;
+        Vector3 direction = (targetDestination.transform.position - transform.position).normalized;
         GetComponent<Rigidbody2D>().velocity = direction * speed;
     }
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   value: 0
-  sprite: {fileID: -1842418836, guid: b07c6dc9e4aa4424a83aa9500e4c6b6c, type: 3}
+  sprite: {fileID: 21300000, guid: 8831ebf41e71b8241a906a2ecc6690a1, type: 3}

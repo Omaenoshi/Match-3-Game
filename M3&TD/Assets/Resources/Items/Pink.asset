@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Pink
   m_EditorClassIdentifier: 
   value: 0
-  sprite: {fileID: 1159668624, guid: b18c88b8540227743a3d960cf5145bfb, type: 3}
+  sprite: {fileID: 21300000, guid: 68b00831b39872246b1751af5f144b2b, type: 3}

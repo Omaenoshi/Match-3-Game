@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public GameObject inObj;
+    
     [SerializeField]
     private int WaveSize;
     [SerializeField]
@@ -23,7 +25,8 @@ public class Spawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject enemy = GameObject.Instantiate(EnemyPrefab, SpawnPoint.position, Quaternion.identity) as GameObject;
+        GameObject enemy = Instantiate(EnemyPrefab, SpawnPoint.position, Quaternion.identity);
+        enemy.transform.SetParent(inObj.transform);
         _count = _count + 1;
     }
 

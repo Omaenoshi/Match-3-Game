@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Orange
   m_EditorClassIdentifier: 
   value: 0
-  sprite: {fileID: -2073953710, guid: bb750bb8e0a284a418e89575cecc16ca, type: 3}
+  sprite: {fileID: 21300000, guid: b508ad79fdf855d418aac64d4507c0b6, type: 3}
