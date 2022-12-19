@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: targetDestination
       value: 
       objectReference: {fileID: 7631567963120390983, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
+    - target: {fileID: 6706205205166471451, guid: f55b4f798869d87498409f6a630d5a08, type: 3}
+      propertyPath: Health
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8671220984918299845, guid: f55b4f798869d87498409f6a630d5a08, type: 3}
       propertyPath: m_Name
       value: Enemy Variant

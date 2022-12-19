@@ -115,6 +115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeFromAttach: 2
-  Damage: 10
+  Damage: 15
   Ammo: {fileID: 7127964592098778796, guid: 0141bce9f66d2964ca3892d66d19b68d, type: 3}
   ShoutingInterval: 1

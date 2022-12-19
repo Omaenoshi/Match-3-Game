@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations;
 
 public class Ammo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float Speed = 2;
-    public Enemy target;
+    [SerializeField]
+    public float Speed { get; set; } = 2;
+
+    [SerializeField]
+    public Enemy target { get; set; }
+
+    private int damage { get; set; }
 
     void Start()
     {
         Tower tower = this.gameObject.GetComponentInParent<Tower>();
         target = tower.GetTarget();
+        damage = tower.GetDamage();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -25,5 +29,15 @@ public class Ammo : MonoBehaviour
     {
         Vector3 duration = target.gameObject.transform.position;
         transform.position = Vector2.MoveTowards(transform.position, duration, Speed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Enemy"))
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            enemy.HealthMinus(damage);
+        }
+        Destroy(this.gameObject);
     }
 }
