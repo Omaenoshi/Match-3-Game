@@ -6,7 +6,7 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
     [SerializeField]
-    public float Speed { get; set; } = 2;
+    public float Speed { get; set; } = 0.2f;
 
     [SerializeField]
     public Enemy target { get; set; }

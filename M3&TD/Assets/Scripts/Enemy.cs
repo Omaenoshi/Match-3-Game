@@ -11,8 +11,14 @@ public class Enemy : MonoBehaviour
     public Transform[] players;
 
     private int currentIndex = 0;
+    private Animator anim;
 
     public float speed;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void FixedUpdate()
     {
@@ -23,7 +29,8 @@ public class Enemy : MonoBehaviour
 
     public void HealthMinus(int damage)
     {
-        Health = Health - damage;
+        Health -= damage;
+        anim.Play("Taking Damage Enemy");
         if(Health < 0)
         {
             Destroy(this.gameObject);
