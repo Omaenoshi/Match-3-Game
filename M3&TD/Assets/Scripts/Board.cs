@@ -151,7 +151,7 @@ public sealed class Board : MonoBehaviour
                 {
                     connectedTile.Item = ItemDB.Items[Random.Range(0, ItemDB.Items.Length)];
 
-                    inflateSequence.Join(connectedTile.icon.transform.DOScale(1.3f, TweenDuration));
+                    inflateSequence.Join(connectedTile.icon.transform.DOScale(1f, TweenDuration));
                 }
 
                 await inflateSequence.Play().AsyncWaitForCompletion();
