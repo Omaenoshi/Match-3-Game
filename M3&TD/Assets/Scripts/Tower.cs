@@ -67,12 +67,12 @@ public class Tower : MonoBehaviour
         return Damage;
     }
 
-    // private void OnTriggerExit2D(Collider2D collision)
-    // {
-    //     if (collision.tag.Equals("Enemy") && enemyList.Contains(collision.GetComponent<Enemy>()))
-    //     {
-    //         //Debug.Log(count);
-    //         enemyList.Remove(collision.GetComponent<Enemy>());
-    //     }
-    // }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Enemy") && enemyList.Contains(collision.GetComponent<Enemy>()))
+        {
+            //Debug.Log(count);
+            enemyList.Remove(collision.GetComponent<Enemy>());
+        }
+    }
 }
