@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2357615177210593495}
   - component: {fileID: 2517774734206761026}
-  - component: {fileID: 3507198333479577473}
   - component: {fileID: 2157217682014036908}
   - component: {fileID: 7558704899238144074}
   - component: {fileID: 6696105630514451987}
@@ -89,19 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3507198333479577473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475891142753301585}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829b641a997275648b398c56d4e23969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetDestination: {fileID: 7631567961915449069, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
 --- !u!61 &2157217682014036908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,10 +149,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 50
   players:
-  - {fileID: 2021673227066838198, guid: 7a6bb948e66302a43ab679d84b0d442d, type: 3}
-  - {fileID: 8352799664273087750, guid: 0c0da15af4072a944a88d7175621b0b6, type: 3}
-  - {fileID: 5366556649976001789, guid: 0d54fdfaf66021549aa85ee3fe3cac0a, type: 3}
-  - {fileID: 8937074141605924544, guid: c2295dbd0c1bb304aa2b5d7ba04acb58, type: 3}
+  - {fileID: 287108390647193589, guid: 7a6bb948e66302a43ab679d84b0d442d, type: 3}
+  - {fileID: 5979017710156729068, guid: 0c0da15af4072a944a88d7175621b0b6, type: 3}
+  - {fileID: 1653498905766840801, guid: 0d54fdfaf66021549aa85ee3fe3cac0a, type: 3}
+  - {fileID: 1266878389146198088, guid: c2295dbd0c1bb304aa2b5d7ba04acb58, type: 3}
+  - {fileID: 5138988388227785247, guid: 9510195d9692a834ca282867a61690a8, type: 3}
+  - {fileID: 402814662710143784, guid: 1e6d83b97968a8542935e9a66c08cc7b, type: 3}
   - {fileID: 7631567963120390983, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
   speed: 2
 --- !u!95 &8472508189379600761
