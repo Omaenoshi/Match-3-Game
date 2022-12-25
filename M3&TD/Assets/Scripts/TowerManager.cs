@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class TowerManager : MonoBehaviour
 {
@@ -17,7 +14,7 @@ public class TowerManager : MonoBehaviour
 
     public void SelectedTowerSpawn(GameObject spawn)
     {
-        if (selectedBtn != null)
+        if (selectedBtn != null && !selectedBtn.tag.Equals("Mine") && spawn.transform.childCount == 0)
         {
             var position = spawn.transform.position;
             GameObject tower = null;
@@ -44,10 +41,10 @@ public class TowerManager : MonoBehaviour
     
     public void SelectedTowerSpawnOnRoad(GameObject spawn)
     {
-        if (selectedBtn != null && selectedBtn.tag.Equals("Mine"))
+        if (selectedBtn != null && selectedBtn.tag.Equals("Mine") && spawn.transform.childCount == 0)
         {
-            Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            GameObject tower = Instantiate(selectedBtn, mousePoint, Quaternion.identity);
+            Vector3 position = spawn.transform.position;
+            GameObject tower = Instantiate(selectedBtn, position, Quaternion.identity);
             tower.transform.SetParent(spawn.transform);
             var localPosition = tower.transform.localPosition;
             localPosition =
