@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonClick : MonoBehaviour
+public class TowerManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -12,11 +12,6 @@ public class ButtonClick : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    public void Click()
     {
         
     }

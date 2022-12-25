@@ -12,22 +12,21 @@ public class Ammo : MonoBehaviour
     public Enemy target { get; set; }
 
     private int damage { get; set; }
-
+    
+    private Tower tower { get; set; }
+    
     void Start()
     {
-        Tower tower = this.gameObject.GetComponentInParent<Tower>();
+        tower = this.gameObject.GetComponentInParent<Tower>();
         target = tower.GetTarget();
         damage = tower.GetDamage();
-    }
-
-    void Update()
-    {
-        
     }
 
     public void FixedUpdate()
     {
         Vector3 duration = target.gameObject.transform.position;
+        var renderer = GetComponent<SpriteRenderer>();
+        renderer.flipX = duration.x < transform.position.x;
         transform.position = Vector2.MoveTowards(transform.position, duration, Speed);
     }
 
@@ -36,7 +35,7 @@ public class Ammo : MonoBehaviour
         if (collision.tag.Equals("Enemy"))
         {
             Enemy enemy = collision.GetComponent<Enemy>();
-            enemy.HealthMinus(damage);
+            enemy.HealthMinus(damage, tower);
         }
         Destroy(this.gameObject);
     }

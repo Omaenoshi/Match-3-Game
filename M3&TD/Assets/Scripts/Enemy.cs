@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     private int currentIndex = 0;
     private Animator anim;
+    private bool isDead = false;
 
     public float speed;
 
@@ -22,18 +23,24 @@ public class Enemy : MonoBehaviour
 
     public void FixedUpdate()
     {
-        var duration = players[currentIndex].localPosition;
+        if (!isDead)
+        {
+            var duration = players[currentIndex].localPosition;
 
-        transform.localPosition = Vector2.MoveTowards(transform.localPosition, duration, speed);
+            transform.localPosition = Vector2.MoveTowards(transform.localPosition, duration, speed);
+        }
     }
 
-    public void HealthMinus(int damage)
+    public void HealthMinus(int damage, Tower tower)
     {
         Health -= damage;
         anim.Play("Taking Damage Enemy");
         if(Health < 0)
         {
-            Destroy(this.gameObject);
+            anim.SetTrigger("IsDead");
+            isDead = true;
+            tower.KillEnemy();
+            Destroy(this.gameObject, 1f);
         }
     }
 

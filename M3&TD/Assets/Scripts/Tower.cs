@@ -75,4 +75,9 @@ public class Tower : MonoBehaviour
             enemyList.Remove(collision.GetComponent<Enemy>());
         }
     }
+
+    public void KillEnemy()
+    {
+        target = null;
+    }
 }
