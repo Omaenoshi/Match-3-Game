@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PercentSlowing: 0
   SlowingField: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!95 &1187017124
 Animator:
   serializedVersion: 4
@@ -137,3 +138,5 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+>>>>>>> Stashed changes
