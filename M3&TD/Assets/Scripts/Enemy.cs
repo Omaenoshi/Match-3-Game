@@ -39,8 +39,8 @@ public class Enemy : MonoBehaviour
         {
             anim.SetTrigger("IsDead");
             isDead = true;
-            tower.KillEnemy();
-            Destroy(this.gameObject, 1f);
+            tower.KillEnemy(this);
+            Destroy(gameObject, 1f);
         }
     }
 

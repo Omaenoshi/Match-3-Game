@@ -76,8 +76,9 @@ public class Tower : MonoBehaviour
         }
     }
 
-    public void KillEnemy()
+    public void KillEnemy(Enemy enemy)
     {
-        target = null;
+        if (target.Equals(enemy))
+            target = null;
     }
 }
