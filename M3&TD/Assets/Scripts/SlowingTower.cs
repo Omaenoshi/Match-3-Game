@@ -8,16 +8,8 @@ public class SlowingTower : MonoBehaviour
     [SerializeField]
     public int PercentSlowing;
 
-    [SerializeField]
-    public GameObject SlowingField;
-
     private List<Enemy> enemyList = new List<Enemy>();
     private Dictionary<Enemy, float> enemySpeed = new Dictionary<Enemy, float>();
-    void Start()
-    {
-        GameObject ammo = Instantiate(SlowingField, this.transform.position, Quaternion.identity);
-        ammo.transform.SetParent(this.transform);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Point
   - Ammo
+  - Mine
+  - AttackTower
+  - SlowingTower
   layers:
   - Default
   - TransparentFX

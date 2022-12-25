@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1794401030023342476}
   - component: {fileID: 2051256289756192106}
-  - component: {fileID: -1820066998837476030}
   - component: {fileID: -1501176785038760945}
   - component: {fileID: 1187017124}
+  - component: {fileID: 5684002523894668795}
   m_Layer: 0
   m_Name: SlowingTower
-  m_TagString: Untagged
+  m_TagString: SlowingTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2805758887059375556}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1132407551, guid: 935ea819dcbe5134e95845ba9f69d266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -87,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &-1820066998837476030
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4582476377608559131}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4
 --- !u!114 &-1501176785038760945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f8785f31116044f9a5ad29749e3a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PercentSlowing: 0
-  SlowingField: {fileID: 0}
+  PercentSlowing: 50
 --- !u!95 &1187017124
 Animator:
   serializedVersion: 4
@@ -137,3 +121,106 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &5684002523894668795
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582476377608559131}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.802855, y: 0.6234021}
+  - {x: 0.4315176, y: 0.6807401}
+  - {x: -0.2343483, y: 0.68224216}
+  - {x: -0.61907005, y: 0.6311492}
+  - {x: -1.2037525, y: 0.36303926}
+  - {x: -1.6924229, y: 0.13122082}
+  - {x: -1.9377785, y: -0.15544009}
+  - {x: -2.0705585, y: -0.41768742}
+  - {x: -2.010973, y: -0.861531}
+  - {x: -1.6383343, y: -1.3254535}
+  - {x: -0.9167938, y: -1.7122517}
+  - {x: -0.6346874, y: -1.801832}
+  - {x: -0.21084404, y: -1.84937}
+  - {x: 0.71656513, y: -1.7701488}
+  - {x: 1.3269253, y: -1.6329367}
+  - {x: 1.9074745, y: -1.2962079}
+  - {x: 2.2507267, y: -0.79274344}
+  - {x: 2.2414227, y: -0.47822523}
+  - {x: 2.1014795, y: -0.17842388}
+  - {x: 1.6155548, y: 0.32822704}
+  - {x: 0.81847906, y: 0.62006164}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!1001 &6723984915204139299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1794401030023342476}
+    m_Modifications:
+    - target: {fileID: 8908237092832816346, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_Name
+      value: Slowing Field
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.085243225
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5284984
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+--- !u!4 &2805758887059375556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8908237092832816359, guid: 4fbba28f52fe2bf46a073c3b0bf89157, type: 3}
+  m_PrefabInstance: {fileID: 6723984915204139299}
+  m_PrefabAsset: {fileID: 0}
