@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,12 @@ public class Mine : MonoBehaviour
 
     private bool isTriggerd = false;
     private List<Enemy> enemyList = new List<Enemy>();
+    private Animator _anim;
+
+    private void Start()
+    {
+        _anim = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,8 +40,9 @@ public class Mine : MonoBehaviour
         {
             enemy.HealthMinus(damage);
         }
-
-        Destroy(gameObject);
+        
+        _anim.Play("MineBang");
+        Destroy(gameObject, 2f);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
