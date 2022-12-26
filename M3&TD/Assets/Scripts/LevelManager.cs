@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
             _currentLevel = PlayerPrefs.GetInt("Level");
             for (var i = 0; i < _currentLevel; i++)
             {
-                levels[i].GetComponent<Button>().SetEnabled(true);
+                levels[i].GetComponent<Button>().enabled = false;
             }
         }
     }

@@ -14,6 +14,10 @@ public sealed class Board : MonoBehaviour
 
     public Row[] rows;
 
+    [SerializeField] private ProgressBar _progressBar;
+
+    [SerializeField] private float _count;
+
     public Tile[,] Tiles { get; private set; }
 
     public int Width => Tiles.GetLength(0);
@@ -180,11 +184,6 @@ public sealed class Board : MonoBehaviour
         (tile1.Item, tile2.Item) = (tile2.Item, tile1.Item);
     }
 
-    private bool CanPop(Tile tile)
-    {
-        return tile.GetConnectedTiles(new List<Tile> { tile }).Skip(1).Count() >= 2;
-    }
-
     private bool CheckPop()
     {
         for (var y = 0; y < Height; y++)
@@ -210,6 +209,8 @@ public sealed class Board : MonoBehaviour
                 var connectedTiles = CheckComb(tile);
                 
                 if (connectedTiles == null) continue;
+                
+                _progressBar.Fill(_count * connectedTiles.Count);
 
                 var deflateSequence = DOTween.Sequence();
 
