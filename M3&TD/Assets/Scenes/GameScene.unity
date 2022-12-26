@@ -9342,6 +9342,7 @@ GameObject:
   - component: {fileID: 1337764019}
   - component: {fileID: 1337764018}
   - component: {fileID: 1337764021}
+  - component: {fileID: 1337764022}
   m_Layer: 5
   m_Name: MineTower
   m_TagString: Untagged
@@ -9475,6 +9476,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89171a0a98fd2a442bb4899c1629b401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &1337764022
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337764016}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &1358748443
 GameObject:
   m_ObjectHideFlags: 0
@@ -10255,7 +10272,7 @@ MonoBehaviour:
         m_MethodName: SelectTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4582476377608559131, guid: ab87f8c19c3f6134d990cd88d7dc7ea0, type: 3}
+          m_ObjectArgument: {fileID: 805797059682561279, guid: ab87f8c19c3f6134d990cd88d7dc7ea0, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

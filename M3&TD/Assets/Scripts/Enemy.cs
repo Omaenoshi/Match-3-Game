@@ -44,6 +44,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void HealthMinus(int damage)
+    {
+        Health -= damage;
+        anim.Play("Taking Damage Enemy");
+        if (Health < 0)
+        {
+            anim.SetTrigger("IsDead");
+            isDead = true;
+            Destroy(gameObject, 1f);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag.Equals("Point"))
