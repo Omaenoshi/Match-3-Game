@@ -45,6 +45,83 @@ public sealed class Board : MonoBehaviour
             }
         }
     }
+    
+    private List<Tile> CheckComb(Tile tile)
+    {
+        int combX = 0;
+        List<Tile> itemsX = new List<Tile>() {tile};
+        for (int i = tile.x + 1; i < Tiles.GetLength(0); i++)
+        {
+            if (tile.Item.Equals(Tiles[i, tile.y].Item))
+            {
+                combX++;
+                itemsX.Add(Tiles[i, tile.y]);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        for (int i = tile.x - 1; i >= 0; i--)
+        {
+            if (tile.Item.Equals(Tiles[i, tile.y].Item))
+            {
+                combX++;
+                itemsX.Add(Tiles[i, tile.y]);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        int combY = 0;
+        List<Tile> itemsY = new List<Tile>() {tile};
+        
+        for (int i = tile.y + 1; i < Tiles.GetLength(1); i++)
+        {
+            if (tile.Item.Equals(Tiles[tile.x, i].Item))
+            {
+                combY++;
+                itemsY.Add(Tiles[tile.x, i]);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        for (int i = tile.y - 1; i >= 0; i--)
+        {
+            if (tile.Item.Equals(Tiles[tile.x, i].Item))
+            {
+                combY++;
+                itemsY.Add(Tiles[tile.x, i]);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        if (combX >= 2 && combY < 2)
+        {
+            return itemsX;
+        } 
+        if (combY >= 2 && combX < 2)
+        {
+            return itemsY;
+        }
+        if (combX >= 2 && combY >= 2)
+        {
+            itemsY.Remove(tile);
+            itemsX.AddRange(itemsY);
+            return itemsX;
+        }
+
+        return null;
+    }
 
     public async void Select(Tile tile)
     {
@@ -67,10 +144,9 @@ public sealed class Board : MonoBehaviour
         await Swap(_selection[0], _selection[1]);
         
 
-        if (CanPop(_selection[1]))
+        if (CheckComb(_selection[1]) != null || CheckComb(_selection[0]) != null)
         {
             Pop();
-            if(CheckPop()) Pop();
         }
         else
         {
@@ -115,7 +191,7 @@ public sealed class Board : MonoBehaviour
         {
             for (var x = 0; x < Width; x++)
             {
-                if (Tiles[x, y].GetConnectedTiles().Skip(1).Count() >= 2)
+                if (CheckComb(Tiles[x, y]) != null)
                     return true;
             }
         }
@@ -131,9 +207,9 @@ public sealed class Board : MonoBehaviour
             {
                 var tile = Tiles[x, y];
 
-                var connectedTiles = tile.GetConnectedTiles();
+                var connectedTiles = CheckComb(tile);
                 
-                if (connectedTiles.Count < 3) continue;
+                if (connectedTiles == null) continue;
 
                 var deflateSequence = DOTween.Sequence();
 
@@ -157,6 +233,8 @@ public sealed class Board : MonoBehaviour
                 await inflateSequence.Play().AsyncWaitForCompletion();
             }
         }
+
+        if (CheckPop()) Pop();
     }
 
 }
