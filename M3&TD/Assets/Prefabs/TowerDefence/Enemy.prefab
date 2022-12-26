@@ -156,7 +156,8 @@ MonoBehaviour:
   - {fileID: 5138988388227785247, guid: 9510195d9692a834ca282867a61690a8, type: 3}
   - {fileID: 402814662710143784, guid: 1e6d83b97968a8542935e9a66c08cc7b, type: 3}
   - {fileID: 7631567963120390983, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
-  speed: 2
+  speed: 1
+  spawner: {fileID: 4834758229250248297, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
 --- !u!95 &8472508189379600761
 Animator:
   serializedVersion: 4

@@ -2940,10 +2940,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1217265464}
     m_Modifications:
+    - target: {fileID: 1426045069, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3030461923660176060, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3775194773232729035, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
+      propertyPath: DefeatPanel
+      value: 
+      objectReference: {fileID: 515029211}
     - target: {fileID: 7631567961915449069, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
       propertyPath: m_Name
       value: EndPoint
@@ -2954,7 +2962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7631567963120390983, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 809
+      value: 623
       objectReference: {fileID: 0}
     - target: {fileID: 7631567963120390983, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2991,6 +2999,10 @@ PrefabInstance:
     - target: {fileID: 7631567963120390983, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689390171638287583, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
@@ -7454,6 +7466,7 @@ GameObject:
   - component: {fileID: 1217265464}
   - component: {fileID: 1217265468}
   - component: {fileID: 1217265467}
+  - component: {fileID: 1217265469}
   m_Layer: 5
   m_Name: TDBoard
   m_TagString: Untagged
@@ -7525,6 +7538,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217265463}
   m_CullTransparentMesh: 1
+--- !u!114 &1217265469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217265463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234f8d4e541018344b036b63a2bd09f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Maxcount: 0
+  deadCount: 0
+  panel: {fileID: 2089482470}
 --- !u!1 &1224008284 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3610496334933413591, guid: 485b8073def6e8d4583d4130222fa83e, type: 3}
@@ -11850,6 +11878,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1217265464}
     m_Modifications:
+    - target: {fileID: -5340181041538706146, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 2089482470}
     - target: {fileID: -5340181041538706146, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
       propertyPath: inObj
       value: 
