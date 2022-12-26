@@ -16,8 +16,15 @@ public class ScenePause : MonoBehaviour
         
     }
 
-    public void stop()
+    public void stop(bool var)
     {
-        Time.timeScale = 0;
+        if (var)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 }
