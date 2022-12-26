@@ -33,6 +33,7 @@ public class Mine : MonoBehaviour
         {
             enemy.HealthMinus(damage);
         }
+
         Destroy(gameObject);
     }
 
