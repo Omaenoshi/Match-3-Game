@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_0"
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 22
+        width: 134
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6917de9404f4e42a54a5faca443c23
+      internalID: 1005804061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_1"
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 22
+        width: 137
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc6d081c36e4b843a9eb1739263dbf6
+      internalID: 48912048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_6"
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 22
+        width: 134
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f00feb213b2704bbb843916d3139ed
+      internalID: -1298229102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_7"
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 22
+        width: 134
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1094473785142cf4b8f8cf5bfd37fc49
+      internalID: 759757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_8"
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 22
+        width: 134
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2623f76fa297c1444ab8d8544985483f
+      internalID: 592123184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +243,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_0": 1005804061
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_8": 592123184
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_7": 759757
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_4": -1040610525
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_2": -40368864
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_5": -1517264720
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_1": 48912048
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_9": -130881843
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_6": -1298229102
+      "\u043B\u0438\u0441\u0442 \u043C\u0438\u043D\u0430 \u0432\u0437\u0440\u044B\u0432_3": 1208673991
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
