@@ -18,6 +18,8 @@ public class Spawner : MonoBehaviour
     private float StartTime;
     [SerializeField]
     private GameObject Panel;
+    [SerializeField]
+    private int _currentLevel;
 
     private int _count;
 
@@ -58,6 +60,7 @@ public class Spawner : MonoBehaviour
             }
             if (alldead)
             {
+                PlayerPrefs.SetInt("Level" + _currentLevel, _currentLevel);
                 Panel.SetActive(true);
             }
         }

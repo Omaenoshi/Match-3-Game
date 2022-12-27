@@ -8340,6 +8340,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0197bd460ad5b4845b44a7607bf59f96, type: 3}
+--- !u!1 &1254826821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9213729889187039137, guid: 0197bd460ad5b4845b44a7607bf59f96, type: 3}
+  m_PrefabInstance: {fileID: 1254826820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1290248240
 GameObject:
   m_ObjectHideFlags: 0
@@ -10952,6 +10957,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1217265464}
     m_Modifications:
     - target: {fileID: -5340181041538706146, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
+      propertyPath: Panel
+      value: 
+      objectReference: {fileID: 1254826821}
+    - target: {fileID: -5340181041538706146, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
       propertyPath: inObj
       value: 
       objectReference: {fileID: 1217265463}
@@ -10963,6 +10972,10 @@ PrefabInstance:
       propertyPath: EnemyPrefab
       value: 
       objectReference: {fileID: 1475891142753301585, guid: 4fb80ce16f4a995418046952105b8a64, type: 3}
+    - target: {fileID: -5340181041538706146, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
+      propertyPath: _currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4834758229250248297, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
       propertyPath: m_Name
       value: Spawn
