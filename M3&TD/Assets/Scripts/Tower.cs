@@ -18,19 +18,35 @@ public class Tower : MonoBehaviour
     public float ShoutingInterval;
 
     private Enemy target;
-    // Start is called before the first frame update
+
     private List<Enemy> enemyList = new List<Enemy>();
     void Start()
     {
         InvokeRepeating("SpawnAmmo", 1, ShoutingInterval);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        for(int i = 0; i < enemyList.Count; i++)
+        {
+            if (enemyList[i].GetIsDead())
+            {
+                enemyList.RemoveAt(i);
+            }
+        }
         if (target == null && enemyList != null && enemyList.Count > 0)
         {
-            target = enemyList[enemyList.Count - 1];
+            Enemy targ = null;
+            int min = ushort.MaxValue;
+            for(int i =0; i < enemyList.Count; i++)
+            {
+                if (enemyList[i].getId() < min)
+                {
+                    min = enemyList[i].getId();
+                    targ = enemyList[i];
+                }
+            }
+            target = targ;
         }
     }
 

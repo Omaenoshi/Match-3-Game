@@ -16,11 +16,21 @@ public class Enemy : MonoBehaviour
 
     public float speed;
     public GameObject spawner;
-    private Spawner spawn;
+
+    private int _id;
     private void Start()
     {
         anim = GetComponent<Animator>();
-        spawn = spawner.GetComponent<Spawner>();
+    }
+
+    public void setId(int id)
+    {
+        _id = id;
+    }
+
+    public int getId()
+    {
+        return _id;
     }
 
     public bool GetIsDead()

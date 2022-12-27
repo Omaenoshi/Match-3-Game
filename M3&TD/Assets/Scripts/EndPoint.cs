@@ -19,7 +19,7 @@ public class EndPoint : MonoBehaviour
             if(counter < MaxEnemy)
             {
                 counter++;
-                Destroy(enemy.gameObject);
+                enemy.HealthMinus(ushort.MaxValue);
             }
             else
             {

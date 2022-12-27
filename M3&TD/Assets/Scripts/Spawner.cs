@@ -39,6 +39,8 @@ public class Spawner : MonoBehaviour
     {
         GameObject enemy = Instantiate(EnemyPrefab, SpawnPoint.position, Quaternion.identity);
         enemy.transform.SetParent(inObj.transform);
+        Enemy enem = enemy.GetComponent<Enemy>();
+        enem.setId(_count);
         enemies.Add(enemy.GetComponent<Enemy>());
         _count++;
     }
