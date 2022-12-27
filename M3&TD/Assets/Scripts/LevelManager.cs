@@ -14,17 +14,12 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("Level"))
+        _currentLevel = !PlayerPrefs.HasKey("Level") ? 0 : PlayerPrefs.GetInt("Level");
+        
+        for (var i = 0; i <= _currentLevel; i++)
         {
-            _currentLevel = 0;
-        }
-        else
-        {
-            _currentLevel = PlayerPrefs.GetInt("Level");
-            for (var i = 0; i < _currentLevel; i++)
-            {
-                levels[i].GetComponent<Button>().enabled = false;
-            }
+            if (i == levels.Length) continue;
+            levels[i].GetComponent<Button>().enabled = true;
         }
     }
 }

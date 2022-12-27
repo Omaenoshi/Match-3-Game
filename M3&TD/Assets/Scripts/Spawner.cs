@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
             }
             if (alldead)
             {
-                PlayerPrefs.SetInt("Level" + _currentLevel, _currentLevel);
+                PlayerPrefs.SetInt("Level", _currentLevel);
                 Panel.SetActive(true);
             }
         }
