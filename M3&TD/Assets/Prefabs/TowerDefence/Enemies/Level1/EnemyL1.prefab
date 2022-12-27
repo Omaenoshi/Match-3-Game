@@ -150,8 +150,13 @@ MonoBehaviour:
   Health: 50
   players:
   - {fileID: 8511660987233666489, guid: b7134e12df4de5e41888d16278e9a5d2, type: 3}
+<<<<<<< HEAD
   speed: 0.2
   spawner: {fileID: 0}
+=======
+  speed: 0.5
+  spawner: {fileID: 4834758229250248297, guid: eeb2d172a44436f4aaad8697e5a45c7c, type: 3}
+>>>>>>> develop
 --- !u!95 &8472508189379600761
 Animator:
   serializedVersion: 4
