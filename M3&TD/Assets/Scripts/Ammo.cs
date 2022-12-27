@@ -24,6 +24,10 @@ public class Ammo : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (target == null)
+        {
+            Destroy(this.gameObject); return;
+        }
         Vector3 duration = target.gameObject.transform.position;
         var renderer = GetComponent<SpriteRenderer>();
         renderer.flipX = duration.x < transform.position.x;
@@ -32,7 +36,7 @@ public class Ammo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
             Enemy enemy = collision.GetComponent<Enemy>();
             enemy.HealthMinus(damage, tower);

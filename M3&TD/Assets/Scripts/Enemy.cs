@@ -15,10 +15,17 @@ public class Enemy : MonoBehaviour
     private bool isDead = false;
 
     public float speed;
-
+    public GameObject spawner;
+    private Spawner spawn;
     private void Start()
     {
         anim = GetComponent<Animator>();
+        spawn = spawner.GetComponent<Spawner>();
+    }
+
+    public bool GetIsDead()
+    {
+        return isDead;
     }
 
     public void FixedUpdate()
@@ -54,11 +61,12 @@ public class Enemy : MonoBehaviour
             isDead = true;
             Destroy(gameObject, 1f);
         }
-    }
+    }  
+  
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag.Equals("Point"))
+        if (col.CompareTag("Point"))
         {
             if (currentIndex < players.Length)
             {
