@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6696105630514451987}
   - component: {fileID: 8472508189379600761}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyL3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,13 +149,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 50
   players:
-  - {fileID: 287108390647193589, guid: 7a6bb948e66302a43ab679d84b0d442d, type: 3}
-  - {fileID: 5979017710156729068, guid: 0c0da15af4072a944a88d7175621b0b6, type: 3}
-  - {fileID: 1653498905766840801, guid: 0d54fdfaf66021549aa85ee3fe3cac0a, type: 3}
-  - {fileID: 1266878389146198088, guid: c2295dbd0c1bb304aa2b5d7ba04acb58, type: 3}
-  - {fileID: 5138988388227785247, guid: 9510195d9692a834ca282867a61690a8, type: 3}
-  - {fileID: 402814662710143784, guid: 1e6d83b97968a8542935e9a66c08cc7b, type: 3}
-  - {fileID: 7631567963120390983, guid: 91e8590095f56fc4687178552d8019e3, type: 3}
+  - {fileID: 8361235007467315126, guid: 79f0be6ef3ffc954da0bd2370b08e585, type: 3}
+  - {fileID: 1888353959332216551, guid: 700df45f3095f324f84f041d2b0fee18, type: 3}
+  - {fileID: 1258240048204123925, guid: bf340133756be42488a2721a6cbab901, type: 3}
+  - {fileID: 1444630787579163865, guid: 2705a17332ff26b4ca9265538cc0cde7, type: 3}
+  - {fileID: 173507744182156472, guid: 7ffe5f8ce5c8d2d428424fa25178f3fa, type: 3}
   speed: 2
 --- !u!95 &8472508189379600761
 Animator:

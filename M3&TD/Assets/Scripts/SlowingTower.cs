@@ -6,7 +6,7 @@ public class SlowingTower : MonoBehaviour
 {
 
     [SerializeField]
-    public int PercentSlowing;
+    private int PercentSlowing;
 
     private List<Enemy> enemyList = new List<Enemy>();
     private Dictionary<Enemy, float> enemySpeed = new Dictionary<Enemy, float>();
@@ -14,7 +14,7 @@ public class SlowingTower : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
-        if (collision.tag.Equals("Enemy") && !enemyList.Contains(enemy))
+        if (collision.CompareTag("Enemy") && !enemyList.Contains(enemy))
         {
             enemyList.Add(enemy);
             enemySpeed.Add(enemy, enemy.speed);
@@ -25,7 +25,7 @@ public class SlowingTower : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
-        if (collision.tag.Equals("Enemy") && enemyList.Contains(enemy))
+        if (collision.CompareTag("Enemy") && enemyList.Contains(enemy))
         {
             enemyList.Remove(enemy);
             enemySpeed.TryGetValue(enemy, out enemy.speed);
